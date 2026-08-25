@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Setênios — Rastreabilidade para agricultura biodinâmica e orgânica</title>
+<meta name="description" content="Plataforma de rastreabilidade e transparência para produtores biodinâmicos e orgânicos. Histórico verificável, sem o custo da certificação tradicional.">
+<meta name="keywords" content="agricultura biodinâmica, orgânico, rastreabilidade, certificação, OCS, SPG, transparência">
+<meta property="og:title" content="Setênios — Rastreabilidade para agricultura biodinâmica">
+<meta property="og:description" content="Histórico verificável para quem produz certo, mas não tem capital para certificar.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Karla:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--ink:#151F1A;
+--ink-soft:#22302A;
+--paper:#EDEEE8;
+--paper-2:#E2E4DA;
+--ochre:#C0912B;
+--leaf:#3E6B3C;
+--stone:#7F877C;
+--line:rgba(21,31,26,.14);
+--seal:#7A4A1E;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+background:var(--paper);
+color:var(--ink);
+font-family:'Karla',system-ui,sans-serif;
+line-height:1.6;
+}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+
+/* ---------- Header ---------- */
+header{
+background:var(--ink);
+color:var(--paper);
+padding:20px 0;
+position:sticky;
+top:0;
+z-index:100;
+}
+.header-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:16px;
+}
+.brand{
+font-family:'Fraunces',serif;
+font-size:26px;
+font-weight:600;
+letter-spacing:-.01em;
+}
+.brand span{color:var(--ochre)}
+.brand-sub{
+font-size:11px;
+color:var(--stone);
+letter-spacing:.12em;
+text-transform:uppercase;
+margin-top:4px;
+font-weight:600;
+}
+nav{display:flex;gap:24px;flex-wrap:wrap}
+nav a{
+color:var(--paper);
+text-decoration:none;
+font-size:14px;
+font-weight:500;
+transition:color .2s;
+}
+nav a:hover{color:var(--ochre)}
+/* ---------- Hero ---------- */
+.hero{
+background:var(--ink);
+color:var(--paper);
+padding:80px 0 100px;
+text-align:center;
+}
+.hero-kicker{
+font-family:'Space Mono',monospace;
+font-size:11px;
+letter-spacing:.16em;
+text-transform:uppercase;
+color:var(--ochre);
+margin-bottom:20px;
+}
+.hero h1{
+font-family:'Fraunces',serif;
+font-size:48px;
+font-weight:600;
+line-height:1.15;
+letter-spacing:-.02em;
+max-width:800px;
+margin:0 auto 24px;
+}
+.hero p{
+font-size:18px;
+color:#C3C9C0;
+max-width:600px;
+margin:0 auto 36px;
+line-height:1.65;
+}
+.btn{
+display:inline-block;
+background:var(--ochre);
+color:var(--ink);
+padding:14px 32px;
+font-family:'Karla',sans-serif;
+font-weight:700;
+font-size:15px;
+text-decoration:none;
+border-radius:2px;
+transition:all .2s;
+border:none;
+cursor:pointer;
+}
+.btn:hover{background:#D4A33E;transform:translateY(-2px)}
+.btn-outline{
+background:transparent;
+color:var(--paper);
+border:1px solid rgba(237,238,232,.3);
+margin-left:12px;
+}
+.btn-outline:hover{border-color:var(--ochre);color:var(--ochre)}
+/* ---------- Sections ---------- */
+section{padding:80px 0}
+.section-kicker{
+font-family:'Space Mono',monospace;
+font-size:11px;
+letter-spacing:.16em;
+text-transform:uppercase;
+color:var(--ochre);
+margin-bottom:16px;
+}
+h2{
+font-family:'Fraunces',serif;
+font-size:36px;
+font-weight:600;
+line-height:1.2;
+letter-spacing:-.015em;
+margin-bottom:20px;
+}
+.section-text{
+font-size:16px;
+color:#4A554E;
+max-width:700px;
+line-height:1.7;
+margin-bottom:40px;
+}
+.section-text strong{color:var(--ink);font-weight:600}
+/* ---------- Problem ---------- */
+.problem{background:var(--paper-2)}
+.problem-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:48px;
+align-items:center;
+}
+@media(max-width:768px){
+.problem-grid{grid-template-columns:1fr;gap:32px}
+.hero h1{font-size:36px}
+h2{font-size:28px}
+}
+.stat-box{
+background:var(--ink);
+color:var(--paper);
+padding:40px;
+border-radius:4px;
+}
+.stat-box .stat{
+font-family:'Fraunces',serif;
+font-size:56px;
+font-weight:600;
+color:var(--ochre);
+line-height:1;
+margin-bottom:12px;
+}
+.stat-box p{
+font-size:15px;
+color:#C3C9C0;
+line-height:1.6;
+}
+/* ---------- Solution Steps ---------- */
+.steps{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:32px;
+margin-top:48px;
+}
+@media(max-width:768px){
+.steps{grid-template-columns:1fr;gap:24px}
+}
+.step{
+background:var(--paper-2);
+padding:32px;
+border-radius:4px;
+border-top:3px solid var(--ochre);
+}
+.step-n{
+font-family:'Space Mono',monospace;
+font-size:12px;
+color:var(--ochre);
+letter-spacing:.1em;
+margin-bottom:16px;
+font-weight:700;
+}
+.step h3{
+font-family:'Fraunces',serif;
+font-size:22px;
+font-weight:600;
+margin-bottom:12px;
+line-height:1.25;
+}
+.step p{
+font-size:15px;
+color:#4A554E;
+line-height:1.65;
+}
+/* ---------- For Whom ---------- */
+.for-whom{background:var(--ink);color:var(--paper)}
+.for-whom h2{color:var(--paper)}
+.for-whom .section-text{color:#C3C9C0}
+.audience-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:24px;
+margin-top:48px;
+}
+@media(max-width:768px){
+.audience-grid{grid-template-columns:1fr}
+}
+.audience-card{
+background:rgba(237,238,232,.05);
+border:1px solid rgba(237,238,232,.15);
+padding:28px;
+border-radius:4px;
+}
+.audience-card h4{
+font-family:'Fraunces',serif;
+font-size:18px;
+font-weight:600;
+margin-bottom:8px;
+color:var(--ochre);
+}
+.audience-card p{
+font-size:14px;
+color:#C3C9C0;
+line-height:1.6;
+}
+/* ---------- Compliance ---------- */
+.compliance{
+background:var(--paper-2);
+border-left:4px solid var(--ochre);
+padding:32px;
+margin:60px 0 0;
+}
+.compliance h4{
+font-family:'Space Mono',monospace;
+font-size:11px;
+letter-spacing:.12em;
+text-transform:uppercase;
+color:var(--ochre);
+margin-bottom:12px;
+font-weight:700;
+}
+.compliance p{
+font-size:14px;
+color:#4A554E;
+line-height:1.65;
+}
+.compliance strong{color:var(--ink)}
+/* ---------- CTA Section ---------- */
+.cta-section{
+background:var(--ink);
+color:var(--paper);
+text-align:center;
+padding:80px 0;
+}
+.cta-section h2{color:var(--paper);margin-bottom:16px}
+.cta-section p{
+color:#C3C9C0;
+font-size:16px;
+max-width:600px;
+margin:0 auto 32px;
+line-height:1.65;
+}
+.form-inline{
+display:flex;
+max-width:500px;
+margin:0 auto;
+gap:12px;
+flex-wrap:wrap;
+justify-content:center;
+}
+.form-inline input{
+flex:1;
+min-width:250px;
+padding:14px 18px;
+font-family:'Karla',sans-serif;
+font-size:15px;
+border:1px solid rgba(237,238,232,.3);
+background:rgba(237,238,232,.05);
+color:var(--paper);
+border-radius:2px;
+}
+.form-inline input::placeholder{color:var(--stone)}
+.form-inline input:focus{outline:none;border-color:var(--ochre)}
+/* ---------- Footer ---------- */
+footer{
+background:var(--ink);
+color:var(--stone);
+padding:40px 0;
+text-align:center;
+font-size:13px;
+border-top:1px solid rgba(237,238,232,.1);
+}
+footer a{color:var(--ochre);text-decoration:none}
+footer a:hover{text-decoration:underline}
+.footer-links{
+display:flex;
+justify-content:center;
+gap:24px;
+margin-bottom:16px;
+flex-wrap:wrap;
+}
+/* ---------- Animations ---------- */
+@keyframes fadeInUp{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
+}
+.hero-kicker,.hero h1,.hero p,.btn{
+animation:fadeInUp .6s ease-out both;
+}
+.hero h1{animation-delay:.1s}
+.hero p{animation-delay:.2s}
+.btn{animation-delay:.3s}
+</style>
+</head>
+<body>
+
+<header>
+<div class="wrap header-inner">
+<div>
+<div class="brand">Setênios<span>.</span></div>
+<div class="brand-sub">Rastreabilidade para agricultura biodinâmica</div>
+</div>
+<nav>
+<a href="#problema">Problema</a>
+<a href="#solucao">Solução</a>
+<a href="#para-quem">Para quem</a>
+<a href="#contato">Contato</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="wrap">
+<div class="hero-kicker">Em desenvolvimento · MVP 2026</div>
+<h1>O maior gargalo da produção de qualidade não é fazer o certo. É o custo de tornar isso transparente.</h1>
+<p>Histórico verificável para quem produz certo, mas não tem capital para certificar. O Setênios elimina o atrito entre o produtor biodinâmico e o consumidor que valoriza transparência.</p>
+<a href="#contato" class="btn">Quero saber mais</a>
+<a href="#solucao" class="btn btn-outline">Como funciona</a>
+</div>
+</section>
+
+<section id="problema" class="problem">
+<div class="wrap">
+<div class="problem-grid">
+<div>
+<div class="section-kicker">O problema</div>
+<h2>Certificação custa caro. Transparência não precisa custar.</h2>
+<p class="section-text">A certificação tradicional cumpre seu papel e é rigorosa, mas cobra de <strong>R$ 3 mil a R$ 20 mil por ano</strong> entre taxas, auditorias e deslocamentos. Para o pequeno produtor que já trabalha dentro dos princípios há anos, essa barreira de entrada simplesmente não faz sentido.</p>
+<p class="section-text">O resultado? Produtores excelentes ficam invisíveis. Consumidores engajados ficam sem informação. O mercado perde confiança.</p>
+</div>
+<div class="stat-box">
+<div class="stat">R$ 3k–20k</div>
+<p>Custo anual médio de certificação para pequenos produtores biodinâmicos e orgânicos no Brasil, incluindo taxas, auditorias e deslocamentos.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="solucao">
+<div class="wrap">
+<div class="section-kicker">A solução</div>
+<h2>Três passos para transparência verificável</h2>
+<p class="section-text">O Setênios oferece <strong>histórico verificável</strong> para quem produz certo. O produtor registra sua rotina, o dado é selado e público. O consumidor escaneia o QR code e vê tudo o que foi feito, com data, foto e local.</p>
+
+<div class="steps">
+<div class="step">
+<div class="step-n">01 · REGISTRO</div>
+<h3>Registro sem atrito</h3>
+<p>Autoavaliação guiada pelo celular. Leva 10 minutos e funciona offline no campo. O produtor documenta preparados, manejo e visitas de pares.</p>
+</div>
+<div class="step">
+<div class="step-n">02 · SELO</div>
+<h3>Selo de integridade</h3>
+<p>Cada registro é gravado com data, hora e local. Inalterável e inapagável — nem pelo produtor, nem por nós. Transparência real.</p>
+</div>
+<div class="step">
+<div class="step-n">03 · VERIFICAÇÃO</div>
+<h3>Transparência no ponto de venda</h3>
+<p>QR code na embalagem abre a página pública com o histórico completo, fotos e visitas de pares. O consumidor vê e confia.</p>
+</div>
+</div>
+
+<div class="compliance">
+<h4>Nota de conformidade</h4>
+<p>O termo "orgânico" é regulado pela Lei 10.831/2003. O Setênios é uma ferramenta de <strong>rastreabilidade e transparência</strong> que <strong>complementa</strong> os mecanismos legais (OCS e SPG), não os substitui. Registramos declarações, não emitimos certificados de auditoria.</p>
+</div>
+</div>
+</section>
+
+<section id="para-quem" class="for-whom">
+<div class="wrap">
+<div class="section-kicker">Para quem</div>
+<h2>Feito para quem vive a biodinâmica no dia a dia</h2>
+<p class="section-text">O Setênios foi desenhado na linguagem e na realidade do produtor familiar, biodinâmico e orgânico. Não é um SaaS genérico — é uma ferramenta construída com quem entende o calendário lunar, os preparados e o controle social.</p>
+
+<div class="audience-grid">
+<div class="audience-card">
+<h4>Produtores em OCS</h4>
+<p>Organizações de Controle Social que vendem direto ao consumidor e precisam documentar práticas sem o custo de certificação formal.</p>
+</div>
+<div class="audience-card">
+<h4>Grupos SPG</h4>
+<p>Sistemas Participativos de Garantia que querem digitalizar visitas de pares e tornar o histórico acessível ao consumidor final.</p>
+</div>
+<div class="audience-card">
+<h4>Produtores em transição</h4>
+<p>Quem está migrando para biodinâmica ou orgânico e quer começar a documentar práticas antes de investir em certificação.</p>
+</div>
+<div class="audience-card">
+<h4>Cooperativas e OPACs</h4>
+<p>Organizações que querem dar musculatura e transparência aos seus associados, com custo rateado e escala.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contato" class="cta-section">
+<div class="wrap">
+<div class="section-kicker" style="color:var(--ochre)">Próximos passos</div>
+<h2>Estamos selecionando produtores para o piloto</h2>
+<p>O Setênios está em fase de validação. Se você produz biodinâmico ou orgânico e quer testar a plataforma gratuitamente nos próximos 30 dias, deixe seu contato.</p>
+
+<form class="form-inline" action="https://formspree.io/f/xpwkqjvz" method="POST">
+<input type="email" name="email" placeholder="Seu melhor e-mail" required>
+<button type="submit" class="btn">Quero participar</button>
+</form>
+
+<p style="font-size:13px;color:var(--stone);margin-top:20px">Ou fale direto: <a href="mailto:contato@setenios.com.br" style="color:var(--ochre)">contato@setenios.com.br</a></p>
+</div>
+</section>
+
+<footer>
+<div class="wrap">
+<div class="footer-links">
+<a href="#problema">Problema</a>
+<a href="#solucao">Solução</a>
+<a href="#para-quem">Para quem</a>
+<a href="#contato">Contato</a>
+</div>
+<p>© 2026 Setênios · Rastreabilidade para agricultura biodinâmica e orgânica</p>
+<p style="margin-top:8px;font-size:12px">Desenvolvido com apoio do Qualifica SP · Fundação Dom Cabral</p>
+</div>
+</footer>
+
+</body>
+</html>
